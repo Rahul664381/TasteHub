@@ -1,4 +1,3 @@
-// src/pages/HealthyBreakfast.jsx
 import React from "react";
 
 export default function HealthyBreakfast() {

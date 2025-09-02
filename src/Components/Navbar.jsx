@@ -258,60 +258,60 @@ export default function Navbar() {
               {/* Breakfast */}
               <div className="pl-6">
                 <Link
-                  to="/breakfast"
+                  to="/Breakfast"
                   className="block px-4 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-700 hover:text-red-600"
                   onClick={() => setNavOpen(false)}
                 >
                   Breakfast
                 </Link>
                 <Link
-                  to="/continental-breakfast"
+                  to="/ContinentalBreakfast"
                   className="block px-6 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-600 hover:text-red-600 text-sm"
                   onClick={() => setNavOpen(false)}
                 >
                   Continental Breakfast
                 </Link>
                 <Link
-                  to="/indian-breakfast"
+                  to="/IndianBreakfast"
                   className="block px-6 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-600 hover:text-red-600 text-sm"
                   onClick={() => setNavOpen(false)}
                 >
                   Indian Breakfast
                 </Link>
                 <Link
-                  to="/healthy-breakfast"
+                  to="/HealthyBreakfast"
                   className="block px-6 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-600 hover:text-red-600 text-sm"
                   onClick={() => setNavOpen(false)}
                 >
-                  Healthy Options
+                  HealthyBreakfast
                 </Link>
               </div>
 
               {/* Lunch */}
               <div className="pl-6 mt-1">
                 <Link
-                  to="/lunch"
+                  to="/Lunch"
                   className="block px-4 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-700 hover:text-red-600"
                   onClick={() => setNavOpen(false)}
                 >
                   Lunch
                 </Link>
                 <Link
-                  to="/starters-lunch"
+                  to="/StartersLunch"
                   className="block px-6 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-600 hover:text-red-600 text-sm"
                   onClick={() => setNavOpen(false)}
                 >
                   Starters
                 </Link>
                 <Link
-                  to="/main-course-lunch"
+                  to="/MainCourseLunch"
                   className="block px-6 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-600 hover:text-red-600 text-sm"
                   onClick={() => setNavOpen(false)}
                 >
                   Main Course
                 </Link>
                 <Link
-                  to="/salads-lunch"
+                  to="/SaladsSoups"
                   className="block px-6 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-600 hover:text-red-600 text-sm"
                   onClick={() => setNavOpen(false)}
                 >
@@ -322,28 +322,28 @@ export default function Navbar() {
               {/* Dinner */}
               <div className="pl-6 mt-1">
                 <Link
-                  to="/dinner"
+                  to="/Dinner"
                   className="block px-4 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-700 hover:text-red-600"
                   onClick={() => setNavOpen(false)}
                 >
                   Dinner
                 </Link>
                 <Link
-                  to="/starters-dinner"
+                  to="/StartersDinner"
                   className="block px-6 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-600 hover:text-red-600 text-sm"
                   onClick={() => setNavOpen(false)}
                 >
                   Starters
                 </Link>
                 <Link
-                  to="/main-course-dinner"
+                  to="/MainCourseDinner"
                   className="block px-6 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-600 hover:text-red-600 text-sm"
                   onClick={() => setNavOpen(false)}
                 >
                   Main Course
                 </Link>
                 <Link
-                  to="/desserts-dinner"
+                  to="/DessertsDinner"
                   className="block px-6 py-2 rounded-lg hover:bg-red-50 transition-colors duration-300 text-gray-600 hover:text-red-600 text-sm"
                   onClick={() => setNavOpen(false)}
                 >

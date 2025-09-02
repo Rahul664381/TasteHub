@@ -8,11 +8,13 @@ import FoodRestaurant from "./FoodRestaurant";
 import LandingFixedBanner from "./LandingFixedBanner";
 import CardSlide from "./CardSlide";
 import Gallery from "./Gallery";
+import FoodSlider from "./FoodSlider";
 
 function Home() {
   return (
     <div>
       <Hero />
+      <FoodSlider />
       <StatsSection />
       <FeaturedFoods />
       <LandingBanner />

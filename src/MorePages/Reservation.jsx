@@ -21,6 +21,7 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { IoRestaurant, IoTime, IoLocation, IoCall } from "react-icons/io5";
+import "./Reservation.css";
 
 const Reservation = () => {
   const [formData, setFormData] = useState({
@@ -113,8 +114,8 @@ const Reservation = () => {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 py-40 md:py-16 px-4 sm:px-5">
       {/* Animated background elements */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob delay-2000"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob delay-4000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-red-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
       </div>
 
@@ -245,7 +246,7 @@ const Reservation = () => {
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="your.email@example.com"
+                    placeholder="Enter Your Email"
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full p-3 border rounded-lg focus:outline-none transition-all duration-300 pl-10 ${
@@ -491,7 +492,7 @@ const Reservation = () => {
       {/* Success Modal */}
       {showSuccessModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl shadow-2xl p-6 md:p-8 max-w-md w-full mx-4 text-center transform transition-all duration-500 scale-95 animate-in fade-in-90 zoom-in-90">
+          <div className="bg-white rounded-xl shadow-2xl p-6 md:p-8 max-w-md w-full mx-4 text-center transform transition-all duration-500 scale-95 animate-fade-in">
             <div className="success-checkmark">
               <div className="check-icon">
                 <span className="icon-line line-tip"></span>
@@ -541,160 +542,6 @@ const Reservation = () => {
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        .font-playfair {
-          font-family: "Playfair Display", serif;
-        }
-
-        .success-checkmark {
-          width: 80px;
-          height: 80px;
-          margin: 0 auto;
-          position: relative;
-        }
-
-        .check-icon {
-          width: 80px;
-          height: 80px;
-          position: relative;
-          border-radius: 50%;
-          box-sizing: content-box;
-          border: 4px solid #4caf50;
-          animation: scaleIn 0.5s ease-in-out;
-        }
-
-        .icon-line {
-          height: 5px;
-          background-color: #4caf50;
-          display: block;
-          border-radius: 2px;
-          position: absolute;
-          z-index: 10;
-        }
-
-        .line-tip {
-          top: 46px;
-          left: 14px;
-          width: 25px;
-          transform: rotate(45deg);
-          animation: icon-line-tip 0.75s;
-        }
-
-        .line-long {
-          top: 38px;
-          right: 8px;
-          width: 47px;
-          transform: rotate(-45deg);
-          animation: icon-line-long 0.75s;
-        }
-
-        @keyframes scaleIn {
-          from {
-            transform: scale(0);
-            opacity: 0;
-          }
-          to {
-            transform: scale(1);
-            opacity: 1;
-          }
-        }
-
-        @keyframes icon-line-tip {
-          0% {
-            width: 0;
-            left: 1px;
-            top: 19px;
-          }
-          54% {
-            width: 0;
-            left: 1px;
-            top: 19px;
-          }
-          70% {
-            width: 50px;
-            left: -8px;
-            top: 37px;
-          }
-          84% {
-            width: 17px;
-            left: 21px;
-            top: 48px;
-          }
-          100% {
-            width: 25px;
-            left: 14px;
-            top: 45px;
-          }
-        }
-
-        @keyframes icon-line-long {
-          0% {
-            width: 0;
-            right: 46px;
-            top: 54px;
-          }
-          65% {
-            width: 0;
-            right: 46px;
-            top: 54px;
-          }
-          84% {
-            width: 55px;
-            right: 0px;
-            top: 35px;
-          }
-          100% {
-            width: 47px;
-            right: 8px;
-            top: 38px;
-          }
-        }
-
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-
-        @keyframes blob {
-          0% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
-        }
-
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 3s ease infinite;
-        }
-
-        @keyframes gradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-      `}</style>
     </div>
   );
 };

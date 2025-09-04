@@ -192,7 +192,7 @@ export default function Footer() {
             </p>
             <p className="flex items-center">
               <FaEnvelope className="text-amber-500 mr-2" />
-              <span>info@tastehub.com</span>
+              <span>rm4888752@gmail.com</span>
             </p>
 
             {/* Newsletter Subscription */}

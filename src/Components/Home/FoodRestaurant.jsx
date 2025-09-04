@@ -384,6 +384,8 @@ const FoodRestaurant = () => {
             </div>
             <input
               type="text"
+              id="search-food"
+              name="searchQuery"
               className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300"
               placeholder="Search food items..."
               value={searchQuery}
@@ -393,6 +395,8 @@ const FoodRestaurant = () => {
         </div>
         <div className="w-full md:w-1/2">
           <select
+            id="price-filter"
+            name="priceFilter"
             className="block w-full py-3 px-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300 bg-white"
             value={priceFilter}
             onChange={(e) => setPriceFilter(e.target.value)}
@@ -426,8 +430,14 @@ const FoodRestaurant = () => {
                 alt={product.name}
               />
               <button
+                type="button"
                 className="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md hover:bg-amber-50 transition-colors duration-300"
                 onClick={() => toggleFavorite(product.id)}
+                aria-label={
+                  favorites.has(product.id)
+                    ? "Remove from favorites"
+                    : "Add to favorites"
+                }
               >
                 <FaHeart
                   className={
@@ -472,6 +482,7 @@ const FoodRestaurant = () => {
                 </span>
               </div>
               <motion.button
+                type="button"
                 className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white py-3 px-4 rounded-full transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg"
                 onClick={() => {
                   setSelectedProduct(product);
@@ -516,18 +527,6 @@ const FoodRestaurant = () => {
             exit={{ opacity: 0 }}
           >
             <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-              <div
-                className="fixed inset-0 transition-opacity"
-                aria-hidden="true"
-              >
-                <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
-              </div>
-              <span
-                className="hidden sm:inline-block sm:align-middle sm:h-screen"
-                aria-hidden="true"
-              >
-                &#8203;
-              </span>
               <motion.div
                 className="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full"
                 initial={{ scale: 0.9, opacity: 0 }}
@@ -546,6 +545,7 @@ const FoodRestaurant = () => {
                         setSelectedProduct(null);
                         setShowPaymentSuccess(false);
                       }}
+                      aria-label="Close modal"
                     >
                       <span className="sr-only">Close</span>
                       <svg
@@ -611,29 +611,36 @@ const FoodRestaurant = () => {
                           </div>
 
                           <div className="mb-6">
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label
+                              htmlFor="quantity"
+                              className="block text-sm font-medium text-gray-700 mb-2"
+                            >
                               Quantity
                             </label>
                             <div className="flex items-center">
                               <motion.button
-                                className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-l-md transition-colors duration-300"
                                 type="button"
+                                className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-l-md transition-colors duration-300"
                                 onClick={() => handleQuantityChange("decrease")}
                                 whileTap={{ scale: 0.95 }}
+                                aria-label="Decrease quantity"
                               >
                                 -
                               </motion.button>
                               <input
                                 type="text"
+                                id="quantity"
+                                name="quantity"
                                 className="w-12 text-center border-t border-b border-gray-300 py-2"
                                 value={quantity}
                                 readOnly
                               />
                               <motion.button
-                                className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-r-md transition-colors duration-300"
                                 type="button"
+                                className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-r-md transition-colors duration-300"
                                 onClick={() => handleQuantityChange("increase")}
                                 whileTap={{ scale: 0.95 }}
+                                aria-label="Increase quantity"
                               >
                                 +
                               </motion.button>
@@ -665,6 +672,7 @@ const FoodRestaurant = () => {
                                 value={formData.fullName}
                                 onChange={handleInputChange}
                                 required
+                                autoComplete="name"
                               />
                             </div>
                             <div className="mb-4">
@@ -682,6 +690,7 @@ const FoodRestaurant = () => {
                                 value={formData.email}
                                 onChange={handleInputChange}
                                 required
+                                autoComplete="email"
                               />
                             </div>
                             <div className="mb-4">
@@ -699,6 +708,7 @@ const FoodRestaurant = () => {
                                 value={formData.phone}
                                 onChange={handleInputChange}
                                 required
+                                autoComplete="tel"
                               />
                             </div>
                             <div className="mb-4">
@@ -716,14 +726,19 @@ const FoodRestaurant = () => {
                                 onChange={handleInputChange}
                                 required
                                 rows="3"
+                                autoComplete="street-address"
                               ></textarea>
                             </div>
                             <div className="mb-6">
-                              <label className="block text-sm font-medium text-gray-700 mb-2">
+                              <label
+                                htmlFor="paymentMethod"
+                                className="block text-sm font-medium text-gray-700 mb-2"
+                              >
                                 Payment Method
                               </label>
                               <select
                                 className="w-full mb-3 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300"
+                                id="paymentMethod"
                                 name="paymentMethod"
                                 value={formData.paymentMethod}
                                 onChange={handleInputChange}
@@ -736,6 +751,7 @@ const FoodRestaurant = () => {
                               {formData.paymentMethod === "Online" && (
                                 <select
                                   className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300"
+                                  id="paymentType"
                                   name="paymentType"
                                   value={formData.paymentType}
                                   onChange={handleInputChange}

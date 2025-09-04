@@ -30,7 +30,6 @@ import Events from "./MorePages/Events";
 import FoodRestaurant from "./Components/Home/FoodRestaurant";
 
 function App() {
-  console.log("App Component Rendered");
   return (
     <div>
       <Navbar />
